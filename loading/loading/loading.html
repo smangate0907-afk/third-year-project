@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Every Penny Matters</title>
+
+
+    <!-- Reenie Beanie Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+
+        body {
+            background: #f5f4dc;
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           HOMEPAGE
+        ========================================= */
+
+        #homepage {
+
+            width: 100vw;
+
+            min-height: 100vh;
+            min-height: 100dvh;
+
+            background: #f5f4dc;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           LOADING SCREEN
+        ========================================= */
+
+        #loadingContent {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 100%;
+
+            min-height: 100vh;
+            min-height: 100dvh;
+
+            background: #f5f4dc;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 20px;
+
+            z-index: 1000;
+
+            opacity: 1;
+
+            transition:
+                opacity 0.8s ease;
+        }
+
+
+        /* =========================================
+           LOADER
+        ========================================= */
+
+        .loader {
+
+            width: clamp(40px, 5vw, 65px);
+
+            height: clamp(40px, 5vw, 65px);
+
+            border:
+                clamp(4px, 0.4vw, 6px)
+                solid
+                #d8d8c4;
+
+            border-top:
+                clamp(4px, 0.4vw, 6px)
+                solid
+                #5f9da5;
+
+            border-radius: 50%;
+
+            animation:
+                spin 1s linear infinite;
+
+            margin-bottom:
+                clamp(18px, 3vh, 30px);
+
+            flex-shrink: 0;
+        }
+
+
+        @keyframes spin {
+
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        /* =========================================
+           QUOTE
+        ========================================= */
+
+        #loadingQuote {
+
+            width: min(90%, 1000px);
+
+            color: #5f9da5;
+
+            font-family:
+                "Reenie Beanie",
+                cursive;
+
+            /*
+             * Automatically changes size
+             * according to screen width.
+             */
+
+            font-size:
+                clamp(28px, 4vw, 52px);
+
+            line-height: 1.2;
+
+            text-align: center;
+
+            animation:
+                blink 1.5s ease-in-out infinite;
+
+            overflow-wrap: break-word;
+
+            word-wrap: break-word;
+        }
+
+
+        @keyframes blink {
+
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.15;
+            }
+
+            100% {
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =========================================
+           HOMEPAGE CONTENT
+        ========================================= */
+
+        #homeContent {
+
+            width: 100%;
+
+            padding: 20px;
+
+            text-align: center;
+
+            opacity: 0;
+
+            transition:
+                opacity 1s ease;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-direction: column;
+        }
+
+
+        #homeContent h1 {
+
+            color: #5f9da5;
+
+            font-family:
+                "Reenie Beanie",
+                cursive;
+
+            font-size:
+                clamp(40px, 6vw, 75px);
+
+            font-weight: normal;
+
+            line-height: 1.1;
+
+            max-width: 95%;
+
+            overflow-wrap: break-word;
+        }
+
+
+        /* =========================================
+           SMALL MOBILE
+        ========================================= */
+
+        @media (max-width: 400px) {
+
+            #loadingContent {
+                padding: 15px;
+            }
+
+            #loadingQuote {
+                width: 94%;
+                font-size: 29px;
+            }
+
+            .loader {
+                width: 42px;
+                height: 42px;
+                border-width: 4px;
+            }
+
+            #homeContent h1 {
+                font-size: 42px;
+            }
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (min-width: 401px) and (max-width: 600px) {
+
+            #loadingQuote {
+                width: 90%;
+                font-size: 33px;
+            }
+
+            .loader {
+                width: 46px;
+                height: 46px;
+            }
+
+            #homeContent h1 {
+                font-size: 48px;
+            }
+
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================= */
+
+        @media (min-width: 601px) and (max-width: 1024px) {
+
+            #loadingQuote {
+                width: 85%;
+                font-size: 42px;
+            }
+
+            .loader {
+                width: 55px;
+                height: 55px;
+            }
+
+            #homeContent h1 {
+                font-size: 60px;
+            }
+
+        }
+
+
+        /* =========================================
+           LAPTOP
+        ========================================= */
+
+        @media (min-width: 1025px) and (max-width: 1440px) {
+
+            #loadingQuote {
+                width: 80%;
+                max-width: 1000px;
+                font-size: 48px;
+            }
+
+            #homeContent h1 {
+                font-size: 65px;
+            }
+
+        }
+
+
+        /* =========================================
+           LARGE DESKTOP / MONITOR
+        ========================================= */
+
+        @media (min-width: 1441px) {
+
+            #loadingQuote {
+                width: 75%;
+                max-width: 1200px;
+                font-size: 55px;
+            }
+
+            #homeContent h1 {
+                font-size: 75px;
+            }
+
+        }
+
+
+        /* =========================================
+           LANDSCAPE MOBILE
+        ========================================= */
+
+        @media (max-height: 500px) and (orientation: landscape) {
+
+            #loadingContent {
+                padding: 10px;
+            }
+
+            .loader {
+
+                width: 38px;
+
+                height: 38px;
+
+                margin-bottom: 12px;
+            }
+
+            #loadingQuote {
+
+                font-size: 27px;
+
+                line-height: 1.05;
+
+                width: 90%;
+            }
+
+        }
+
+
+        /* =========================================
+           VERY SMALL HEIGHT SCREENS
+        ========================================= */
+
+        @media (max-height: 400px) {
+
+            .loader {
+
+                width: 32px;
+
+                height: 32px;
+
+                border-width: 3px;
+
+                margin-bottom: 10px;
+            }
+
+            #loadingQuote {
+
+                font-size: 24px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HOMEPAGE
+    ========================================= -->
+
+    <div id="homepage">
+
+
+        <!-- =====================================
+             LOADING SCREEN
+        ===================================== -->
+
+        <div id="loadingContent">
+
+
+            <div class="loader"></div>
+
+
+            <p id="loadingQuote">
+                Behind the Clouds, the Sun is still shining.
+            </p>
+
+
+        </div>
+
+
+        <!-- =====================================
+             HOMEPAGE CONTENT
+        ===================================== -->
+
+        <div id="homeContent">
+
+            <h1>
+                Every Penny Matters
+            </h1>
+
+            <!--
+                Put your actual homepage content here
+            -->
+
+        </div>
+
+
+    </div>
+
+
+
+    <script>
+
+
+        /* =========================================
+           QUOTES
+        ========================================= */
+
+        const quotes = [
+
+            "Behind the Clouds, the Sun is still shining.",
+
+            "Every penny matters.",
+
+            "Small acts of kindness can make a big difference.",
+
+            "Together, we can make a difference.",
+
+            "A little help can bring a lot of hope.",
+
+            "Hope grows when we share it.",
+
+            "Every contribution counts.",
+
+            "Your kindness can change a life."
+
+        ];
+
+
+        let quoteIndex = 0;
+
+
+        const loadingQuote =
+            document.getElementById("loadingQuote");
+
+
+        /* =========================================
+           CHANGE QUOTES
+        ========================================= */
+
+        const quoteTimer = setInterval(() => {
+
+            quoteIndex++;
+
+            if (quoteIndex >= quotes.length) {
+
+                quoteIndex = 0;
+
+            }
+
+            loadingQuote.textContent =
+                quotes[quoteIndex];
+
+        }, 2500);
+
+
+
+        /* =========================================
+           MEASURE INTERNET SPEED
+        ========================================= */
+
+        async function measureInternetSpeed() {
+
+            try {
+
+                const url =
+                    "https://speed.cloudflare.com/__down?bytes=500000"
+                    + "&t="
+                    + Date.now();
+
+
+                const startTime =
+                    performance.now();
+
+
+                const response =
+                    await fetch(url, {
+                        cache: "no-store"
+                    });
+
+
+                const data =
+                    await response.arrayBuffer();
+
+
+                const endTime =
+                    performance.now();
+
+
+                const bytes =
+                    data.byteLength;
+
+
+                const seconds =
+                    (endTime - startTime) / 1000;
+
+
+                const bits =
+                    bytes * 8;
+
+
+                const speedMbps =
+                    (bits / seconds) / 1000000;
+
+
+                console.log(
+                    "Internet speed:",
+                    speedMbps.toFixed(2),
+                    "Mbps"
+                );
+
+
+                return speedMbps;
+
+            }
+
+
+            catch (error) {
+
+                console.log(
+                    "Could not measure internet speed."
+                );
+
+
+                return 0;
+
+            }
+
+        }
+
+
+
+        /* =========================================
+           LOADING FUNCTION
+        ========================================= */
+
+        async function startLoading() {
+
+
+            const speed =
+                await measureInternetSpeed();
+
+
+            let loadingTime;
+
+
+            /* =====================================
+               LOADING TIME
+            ===================================== */
+
+            if (speed >= 50) {
+
+                // Very fast internet
+
+                loadingTime = 2000;
+
+            }
+
+            else if (speed >= 20) {
+
+                // Fast internet
+
+                loadingTime = 4000;
+
+            }
+
+            else if (speed >= 10) {
+
+                // Medium internet
+
+                loadingTime = 6000;
+
+            }
+
+            else if (speed >= 5) {
+
+                // Slow internet
+
+                loadingTime = 9000;
+
+            }
+
+            else if (speed >= 1) {
+
+                // Very slow internet
+
+                loadingTime = 14000;
+
+            }
+
+            else {
+
+                // Extremely slow / failed test
+
+                loadingTime = 18000;
+
+            }
+
+
+            console.log(
+                "Loading screen duration:",
+                loadingTime / 1000,
+                "seconds"
+            );
+
+
+
+            /* =====================================
+               WAIT
+            ===================================== */
+
+            await new Promise(resolve => {
+
+                setTimeout(
+                    resolve,
+                    loadingTime
+                );
+
+            });
+
+
+
+            /* =====================================
+               FINISH LOADING
+            ===================================== */
+
+            clearInterval(quoteTimer);
+
+
+            const loadingContent =
+                document.getElementById(
+                    "loadingContent"
+                );
+
+
+            const homeContent =
+                document.getElementById(
+                    "homeContent"
+                );
+
+
+            /* Fade out loading screen */
+
+            loadingContent.style.opacity =
+                "0";
+
+
+            /* =====================================
+               SHOW HOMEPAGE
+            ===================================== */
+
+            setTimeout(() => {
+
+                loadingContent.style.display =
+                    "none";
+
+
+                homeContent.style.opacity =
+                    "1";
+
+            }, 800);
+
+        }
+
+
+
+        /* =========================================
+           START LOADING
+        ========================================= */
+
+        startLoading();
+
+
+    </script>
+
+
+</body>
+
+</html>

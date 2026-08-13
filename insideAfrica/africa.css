@@ -1,0 +1,627 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body {
+
+    margin: 0;
+
+    background: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #5d7772;
+
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    position: relative;
+
+    background: #ffffff;
+
+}
+
+
+/* =====================================================
+   BACKGROUND IMAGE
+===================================================== */
+
+.page::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image: url("background.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    opacity: 0.12;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+
+    width: 100%;
+
+    height: 78px;
+
+    background: #a9e1e9;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 9%;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+/* =====================================================
+   LOGO AREA
+===================================================== */
+
+.logo-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+
+    width: 39px;
+
+    height: 34px;
+
+    position: relative;
+
+}
+
+
+.logo span {
+
+    position: absolute;
+
+    display: block;
+
+    background: #2c7591;
+
+}
+
+
+.logo span:nth-child(1) {
+
+    width: 19px;
+
+    height: 19px;
+
+    border-radius: 50%;
+
+    left: 2px;
+
+    top: 12px;
+
+}
+
+
+.logo span:nth-child(2) {
+
+    width: 22px;
+
+    height: 22px;
+
+    border-radius: 50%;
+
+    left: 10px;
+
+    top: 2px;
+
+}
+
+
+.logo span:nth-child(3) {
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    left: 18px;
+
+    top: 12px;
+
+}
+
+
+/* =====================================================
+   LOGO TEXT
+===================================================== */
+
+.logo-text {
+
+    font-family: "Reenie Beanie", cursive;
+
+    font-size: 25px;
+
+    color: #527b82;
+
+    margin-top: 2px;
+
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+.content {
+
+    width: 100%;
+
+    min-height: calc(100vh - 78px);
+
+    padding-top: 38px;
+
+    padding-bottom: 70px;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.content h1 {
+
+    margin-left: 13.5%;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    color: #c28776;
+
+    letter-spacing: 0.2px;
+
+}
+
+
+/* =====================================================
+   WEBSITE CARD
+===================================================== */
+
+.website-card {
+
+    width: 64%;
+
+    min-height: 176px;
+
+    margin-left: 16.5%;
+
+    margin-top: 30px;
+
+    padding: 18px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #fff1b9;
+
+    border-radius: 25px;
+
+    border-bottom: 5px solid #e5a28e;
+
+    box-shadow:
+        0 2px 0 rgba(229, 162, 142, 0.25);
+
+    position: relative;
+
+
+    /* ===============================
+       ANIMATION
+    =============================== */
+
+    opacity: 0;
+
+    transition:
+        transform 0.9s ease,
+        opacity 0.9s ease;
+
+}
+
+
+/* =====================================================
+   SLIDE FROM LEFT
+===================================================== */
+
+.website-card.slide-left {
+
+    transform: translateX(-120px);
+
+}
+
+
+/* =====================================================
+   SLIDE FROM RIGHT
+===================================================== */
+
+.website-card.slide-right {
+
+    transform: translateX(120px);
+
+}
+
+
+/* =====================================================
+   CARD VISIBLE
+===================================================== */
+
+.website-card.show {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+}
+
+
+/* =====================================================
+   IMAGE BOX
+===================================================== */
+
+.image-box {
+
+    width: 150px;
+
+    height: 145px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #dddddd;
+
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.image-box img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+/* =====================================================
+   WEBSITE INFORMATION
+===================================================== */
+
+.website-info {
+
+    margin-left: 42px;
+
+    align-self: center;
+
+    max-width: 570px;
+
+}
+
+
+/* =====================================================
+   WEBSITE NAME
+===================================================== */
+
+.website-name {
+
+    display: inline-block;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #a74f43;
+
+    text-decoration: underline;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.description {
+
+    font-size: 15px;
+
+    line-height: 1.35;
+
+    font-weight: 600;
+
+    color: #4f8881;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =====================================================
+   WEBSITE LINK
+===================================================== */
+
+.website-link {
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    color: #5d7772;
+
+    text-decoration: none;
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.website-name:hover {
+
+    color: #7b1112;
+
+}
+
+
+.website-link:hover {
+
+    color: #7b1112;
+
+    text-decoration: underline;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .header {
+
+        padding-left: 6%;
+
+    }
+
+
+    .content h1 {
+
+        margin-left: 8%;
+
+        font-size: 20px;
+
+    }
+
+
+    .website-card {
+
+        width: 84%;
+
+        margin-left: 8%;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .header {
+
+        height: 70px;
+
+        padding-left: 5%;
+
+    }
+
+
+    .logo-text {
+
+        font-size: 22px;
+
+    }
+
+
+    .content {
+
+        padding-top: 30px;
+
+    }
+
+
+    .content h1 {
+
+        margin-left: 7%;
+
+        margin-right: 7%;
+
+        font-size: 18px;
+
+    }
+
+
+    .website-card {
+
+        width: 86%;
+
+        margin-left: 7%;
+
+        margin-top: 25px;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    /* Smaller animation on phones */
+
+    .website-card.slide-left {
+
+        transform: translateX(-70px);
+
+    }
+
+
+    .website-card.slide-right {
+
+        transform: translateX(70px);
+
+    }
+
+
+    .website-card.show {
+
+        transform: translateX(0);
+
+    }
+
+
+    .image-box {
+
+        width: 135px;
+
+        height: 125px;
+
+    }
+
+
+    .website-info {
+
+        margin-left: 0;
+
+        margin-top: 18px;
+
+        max-width: 100%;
+
+    }
+
+
+    .website-name {
+
+        font-size: 22px;
+
+    }
+
+
+    .description {
+
+        font-size: 14px;
+
+    }
+
+
+    .website-link {
+
+        font-size: 13px;
+
+        word-break: break-word;
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION FOR USERS WHO REQUEST IT
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .website-card {
+
+        opacity: 1;
+
+        transform: none !important;
+
+        transition: none;
+
+    }
+
+}

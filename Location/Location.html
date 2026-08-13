@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Nearby NGO Finder</title>
+  
+  <!-- 1. Load Leaflet CSS (Free Open Source Map Library) -->
+  <link rel="stylesheet" href="https://unpkg.com" />
+  
+  <style>
+    #map {
+  height: 500px;  /* This must have a specific pixel value, NOT a percentage */
+  width: 100%;
+  background-color: #ccc; /* Helps you see if the box itself is rendering */
+}
+  </style>
+</head>
+<body>
+
+  <h1>Find Nearby NGOs (Free Alternative)</h1>
+  <p>Click below to share your location. This uses OpenStreetMap data and requires no API keys.</p>
+  <button onclick="getUserLocation()">Find Nearby NGOs</button>
+  
+  <!-- Map container -->
+  <div id="map"></div>
+
+  <!-- 2. Load Leaflet JavaScript Library -->
+  <script src="https://unpkg.com"></script>
+
+  <script>
+    let map;
+    let markersLayer;
+
+    // Trigger browser geolocation
+    function getUserLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            initFreeMap(lat, lng);
+          },
+          () => {
+            alert("Error: Please enable location permissions in your browser.");
+          }
+        );
+      } else {
+        alert("Your browser does not support geolocation.");
+      }
+    }
+
+    // Initialize the open-source map view
+    function initFreeMap(lat, lng) {
+      // Clear map if it already exists to prevent duplication glitches
+      if (map) { map.remove(); }
+
+      // Center map on user location
+      map = L.map('map').setView([lat, lng], 13);
+
+      // Load the visual map tiles from OpenStreetMap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      // Place a custom marker for the user
+      L.marker([lat, lng]).addTo(map)
+        .bindPopup('<b>Your Current Location</b>')
+        .openPopup();
+
+      // Create a layer group to hold discovered NGOs
+      markersLayer = L.layerGroup().addTo(map);
+
+      // Fetch nearby NGOs from Overpass API (Free data query system)
+      fetchNearbyNGOs(lat, lng);
+    }
+
+    // Query the public OpenStreetMap database for local charities/non-profits
+    async function fetchNearbyNGOs(lat, lng) {
+      // Look for locations tagged as social_facility, community_centre, or general office within a 5km radius
+      const radius = 5000; 
+      const query = `
+        [out:json][timeout:25];
+        (
+          node["office"="ngo"](around:${radius},${lat},${lng});
+          node["social_facility"](around:${radius},${lat},${lng});
+          node["amenity"="community_centre"](around:${radius},${lat},${lng});
+        );
+        out body;
+      `;
+      
+      const url = `https://overpass-api.de{encodeURIComponent(query)}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        if (data.elements && data.elements.length > 0) {
+          data.elements.forEach(place => {
+            const name = place.tags.name || "Unnamed Non-Profit / Center";
+            const type = place.tags.office || place.tags.social_facility || "Community Resource";
+            
+            // Drop a pin for every NGO found
+            L.marker([place.lat, place.lon])
+              .addTo(markersLayer)
+              .bindPopup(`<b>${name}</b><br>Type: ${type}`);
+          });
+        } else {
+          alert("No matching non-profit locations found in this specific area's map data.");
+        }
+      } catch (error) {
+        console.error("Data fetch failed", error);
+        alert("Could not load local organization records at this moment.");
+      }
+    }
+  </script>
+</body>
+</html>
