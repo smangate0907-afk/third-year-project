@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hope Rise Is Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="members.css" />
+</head>
+<body>
+  <main class="page">
+
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">
+        <span></span><span></span>
+      </div>
+      <div class="handwritten">Towards light</div>
+    </header>
+
+    <section class="hero">
+      <div class="headline-row first-row">
+        <span class="hover-word">HOPE</span>
+        <img
+          class="hero-photo cylinder-image"
+          src="child.jpg"
+          alt="Children smiling together inside the cylindrical hero image"
+        />
+        <span class="hover-word">RISE</span>
+      </div>
+
+      <div class="headline-row second-row">
+        <span class="hover-word">IS</span>
+        <span class="hover-word">SUPPORT</span>
+      </div>
+
+      <div class="actions">
+        <button class="donate-btn" id="donateBtn" type="button">DONATE</button>
+
+        <button class="website-btn" id="websiteBtn" type="button">
+          <span>Add Your Website</span>
+          <span class="arrow-circle" aria-hidden="true">↗</span>
+        </button>
+      </div>
+
+      <div class="donation-card">
+        <h2>AMOUNT DONATED BY TEAM MEMBERS</h2>
+
+        <div class="amount-box" id="amountBox">$500</div>
+
+        <button class="destination" id="destinationBtn" type="button">
+          TO WWW.CRY.ORG <span class="small-arrow">↗</span>
+        </button>
+
+        <blockquote>
+          “It's really a wonder that I haven't dropped all my ideals, because they seem so absurd and impossible to
+          carry out. Yet I keep them, because in spite of everything, I still believe that people are really good at
+          heart.”
+          <cite>— Anne Frank</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <a class="contact-title" href="#contact">Contact</a>
+
+      <div class="contact-grid" id="contact">
+        <div class="address">
+          Chh. Sambhajinagar<br>
+          Maharashtra<br>
+          India
+        </div>
+
+        <a href="tel:9158675286" class="contact-item">
+          <span class="icon">●</span>
+          <span>9158675286</span>
+        </a>
+
+        <a href="tel:8149310081" class="contact-item">
+          <span class="phone-icon">⌕</span>
+          <span>8149310081</span>
+        </a>
+
+        <a href="mailto:smangate0907@gmail.com" class="contact-item email">
+          <span class="mail-icon">✉</span>
+          <span>smangate0907@gmail.com</span>
+        </a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    const donateBtn = document.getElementById("donateBtn");
+    const websiteBtn = document.getElementById("websiteBtn");
+    const destinationBtn = document.getElementById("destinationBtn");
+
+    function softBounce(button) {
+      button.classList.remove("clicked");
+      void button.offsetWidth;
+      button.classList.add("clicked");
+      setTimeout(() => button.classList.remove("clicked"), 550);
+    }
+
+    donateBtn.addEventListener("click", () => {
+      softBounce(donateBtn);
+      document.getElementById("amountBox").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    });
+
+    websiteBtn.addEventListener("click", () => {
+  softBounce(websiteBtn);
+
+  window.open(
+    "https://mail.google.com/mail/?view=cm&fs=1&to=deeptijadhav889@gmail.com",
+    "_blank"
+  );
+});
+
+    destinationBtn.addEventListener("click", () => {
+      softBounce(destinationBtn);
+      window.open("https://www.cry.org/", "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+/* Reset margins and set background color foundation */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0e9ab9; /* Deep teal backdrop matching your original scene */
+  font-family: sans-serif;
+}
+
+/* Container holding both the image and the video layout layers */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Background image layer handled separately to fix transparency bugs */
+.bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Kept safely behind the video layer */
+  
+  /* BACKGROUND IMAGE CONFIGURATION */
+  background-image: url('clouds.jpg'); /* Change to your image path */
+  background-size: cover;                        
+  background-position: center;                  
+  background-repeat: no-repeat;
+  
+  /* OPACITY CONSTRAINT */
+  opacity: 0.24; /* Restricts image visibility to exactly 24% */
+}
+
+/* Video layout styling: independent from image layer constraints */
+#preload-video {
+  position: relative;
+  z-index: 2;          /* Forces video to stack directly on top */
+  max-width: 800px;    /* Prevents the video from appearing too enlarged */
+  max-height: 800px;   
+  width: 85%;          /* Responsive scaling for mobile devices */
+  height: auto;
+  object-fit: contain; 
+  
+  background-color: transparent; 
+  -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 100%);
+}
