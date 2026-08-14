@@ -25,7 +25,7 @@ video.addEventListener('timeupdate', () => {
       video.pause(); // Freeze video to prevent frame jumping or flashing
       
       // REDIRECTION ROUTE: Replace 'home.html' with your destination web file
-      window.location.href = "index.html"; 
+      window.location.href = "../2nd page/index.html"; 
     }
     // If pageLoaded is false (slow net), code block ignores the redirection 
     // and letting the video loop cleanly using native browser settings.

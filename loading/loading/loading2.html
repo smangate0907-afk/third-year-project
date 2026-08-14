@@ -24,8 +24,6 @@
         href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap"
         rel="stylesheet">
 
-  
-
 
     <style>
 
@@ -727,19 +725,27 @@
                 );
 
 
-         /* Fade out loading screen */
+            /* Fade out loading screen */
 
-loadingContent.style.opacity = "0";
+            loadingContent.style.opacity =
+                "0";
 
-/* =====================================
-   OPEN NEXT WEBPAGE
-===================================== */
 
-setTimeout(() => {
+            /* =====================================
+               SHOW HOMEPAGE
+            ===================================== */
 
-    window.location.href = "../region/region.html";
+            setTimeout(() => {
 
-}, 800);
+                loadingContent.style.display =
+                    "none";
+
+
+                homeContent.style.opacity =
+                    "1";
+
+            }, 800);
+
         }
 
 
