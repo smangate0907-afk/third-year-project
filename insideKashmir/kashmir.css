@@ -1,0 +1,994 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    background: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #5d7772;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page {
+    width: 100%;
+
+    min-height: 100vh;
+
+    position: relative;
+
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   BACKGROUND IMAGE
+===================================================== */
+
+.page::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image: url("background.jpeg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    opacity: 8%;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+
+    width: 100%;
+
+    height: 78px;
+
+    background: #a9e1e9;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 9%;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =====================================================
+   LOGO AREA
+===================================================== */
+
+.logo-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+
+    width: 39px;
+
+    height: 34px;
+
+    position: relative;
+}
+
+
+.logo span {
+
+    position: absolute;
+
+    display: block;
+
+    background: #2c7591;
+}
+
+
+.logo span:nth-child(1) {
+
+    width: 19px;
+
+    height: 19px;
+
+    border-radius: 50%;
+
+    left: 2px;
+
+    top: 12px;
+}
+
+
+.logo span:nth-child(2) {
+
+    width: 22px;
+
+    height: 22px;
+
+    border-radius: 50%;
+
+    left: 10px;
+
+    top: 2px;
+}
+
+
+.logo span:nth-child(3) {
+
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    left: 18px;
+
+    top: 12px;
+}
+
+
+/* =====================================================
+   LOGO TEXT
+===================================================== */
+
+.logo-text {
+
+    font-family: "Reenie Beanie", cursive;
+
+    font-size: 25px;
+
+    color: #527b82;
+
+    margin-top: 2px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content {
+
+    width: 100%;
+
+    min-height: calc(100vh - 78px);
+
+    padding-top: 38px;
+
+    padding-bottom: 100px;
+
+    position: relative;
+
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.content h1 {
+
+    margin-left: 13.5%;
+
+    margin-right: 10%;
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    color: #c28776;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =====================================================
+   WEBSITE CARD
+===================================================== */
+
+.website-card {
+
+    width: 64%;
+
+    min-height: 176px;
+
+    margin-left: 16.5%;
+
+    margin-top: 30px;
+
+    padding: 18px 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #fff1b9;
+
+    border-radius: 25px;
+
+    border-bottom: 5px solid #e5a28e;
+
+    box-shadow:
+        0 2px 0 rgba(229, 162, 142, 0.25);
+
+    position: relative;
+
+    z-index: 2;
+
+    opacity: 0;
+
+    transition:
+        transform 0.9s ease,
+        opacity 0.9s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =====================================================
+   CARD SPACING
+===================================================== */
+
+.website-card + .website-card {
+
+    margin-top: 35px;
+}
+
+
+/* =====================================================
+   LEFT ANIMATION
+===================================================== */
+
+.website-card.slide-left {
+
+    transform: translateX(-150px);
+}
+
+
+/* =====================================================
+   RIGHT ANIMATION
+===================================================== */
+
+.website-card.slide-right {
+
+    transform: translateX(150px);
+}
+
+
+/* =====================================================
+   SHOW
+===================================================== */
+
+.website-card.show {
+
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.website-card.show:hover {
+
+    box-shadow:
+        0 8px 18px rgba(123, 17, 18, 0.12);
+}
+
+
+/* =====================================================
+   IMAGE BOX
+===================================================== */
+
+.image-box {
+
+    width: 150px;
+
+    height: 145px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #dddddd;
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.image-box img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+.website-card:hover .image-box img {
+
+    transform: scale(1.04);
+}
+
+
+/* =====================================================
+   INFORMATION
+===================================================== */
+
+.website-info {
+
+    margin-left: 42px;
+
+    align-self: center;
+
+    max-width: 570px;
+}
+
+
+/* =====================================================
+   ORGANIZATION NAME
+===================================================== */
+
+.website-name {
+
+    display: inline-block;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #a74f43;
+
+    text-decoration: underline;
+
+    margin-bottom: 10px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.website-name:hover {
+
+    color: #7b1112;
+
+    transform: translateX(3px);
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.description {
+
+    font-size: 15px;
+
+    line-height: 1.45;
+
+    font-weight: 600;
+
+    color: #4f8881;
+
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   WEBSITE LINK
+===================================================== */
+
+.website-link {
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    color: #5d7772;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+
+.website-link:hover {
+
+    color: #7b1112;
+
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   LARGE DESKTOP
+   1201px+
+===================================================== */
+
+@media (min-width: 1201px) {
+
+    .website-card {
+
+        width: 64%;
+
+        margin-left: 16.5%;
+    }
+
+}
+
+
+/* =====================================================
+   LAPTOP
+   1001px - 1200px
+===================================================== */
+
+@media (min-width: 1001px) and (max-width: 1200px) {
+
+    .header {
+
+        padding-left: 7%;
+    }
+
+
+    .content h1 {
+
+        margin-left: 9%;
+
+        font-size: 21px;
+    }
+
+
+    .website-card {
+
+        width: 78%;
+
+        margin-left: 11%;
+    }
+
+
+    .website-info {
+
+        max-width: 600px;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET LANDSCAPE
+   769px - 1000px
+===================================================== */
+
+@media (min-width: 769px) and (max-width: 1000px) {
+
+    .header {
+
+        height: 75px;
+
+        padding-left: 6%;
+    }
+
+
+    .content {
+
+        padding-top: 35px;
+    }
+
+
+    .content h1 {
+
+        margin-left: 8%;
+
+        margin-right: 8%;
+
+        font-size: 20px;
+    }
+
+
+    .website-card {
+
+        width: 84%;
+
+        margin-left: 8%;
+
+        padding: 18px 25px;
+    }
+
+
+    .website-info {
+
+        margin-left: 30px;
+
+        max-width: 500px;
+    }
+
+
+    .website-name {
+
+        font-size: 23px;
+    }
+
+
+    .description {
+
+        font-size: 14px;
+    }
+
+
+    .website-link {
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET PORTRAIT
+   601px - 768px
+===================================================== */
+
+@media (min-width: 601px) and (max-width: 768px) {
+
+    .header {
+
+        height: 72px;
+
+        padding-left: 6%;
+    }
+
+
+    .logo-text {
+
+        font-size: 24px;
+    }
+
+
+    .content {
+
+        padding-top: 32px;
+
+        padding-bottom: 70px;
+    }
+
+
+    .content h1 {
+
+        margin-left: 7%;
+
+        margin-right: 7%;
+
+        font-size: 19px;
+
+        line-height: 1.4;
+    }
+
+
+    .website-card {
+
+        width: 88%;
+
+        margin-left: 6%;
+
+        padding: 18px 20px;
+
+        min-height: 160px;
+    }
+
+
+    .image-box {
+
+        width: 130px;
+
+        height: 125px;
+    }
+
+
+    .website-info {
+
+        margin-left: 25px;
+
+        max-width: calc(100% - 155px);
+    }
+
+
+    .website-name {
+
+        font-size: 21px;
+
+        line-height: 1.25;
+    }
+
+
+    .description {
+
+        font-size: 14px;
+
+        line-height: 1.4;
+    }
+
+
+    .website-link {
+
+        font-size: 13px;
+
+        word-break: break-word;
+    }
+
+
+    .website-card.slide-left {
+
+        transform: translateX(-100px);
+    }
+
+
+    .website-card.slide-right {
+
+        transform: translateX(100px);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   401px - 600px
+===================================================== */
+
+@media (min-width: 401px) and (max-width: 600px) {
+
+    .header {
+
+        height: 70px;
+
+        padding-left: 5%;
+    }
+
+
+    .logo {
+
+        transform: scale(0.9);
+    }
+
+
+    .logo-text {
+
+        font-size: 23px;
+    }
+
+
+    .content {
+
+        min-height: calc(100vh - 70px);
+
+        padding-top: 30px;
+
+        padding-bottom: 60px;
+    }
+
+
+    .content h1 {
+
+        margin-left: 7%;
+
+        margin-right: 7%;
+
+        font-size: 18px;
+
+        line-height: 1.4;
+    }
+
+
+    .website-card {
+
+        width: 86%;
+
+        margin-left: 7%;
+
+        margin-top: 25px;
+
+        padding: 18px;
+
+        min-height: auto;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        border-radius: 22px;
+    }
+
+
+    .website-card + .website-card {
+
+        margin-top: 28px;
+    }
+
+
+    .website-card.slide-left {
+
+        transform: translateX(-90px);
+    }
+
+
+    .website-card.slide-right {
+
+        transform: translateX(90px);
+    }
+
+
+    .website-card.show {
+
+        transform: translateX(0);
+    }
+
+
+    .image-box {
+
+        width: 135px;
+
+        height: 125px;
+
+        border-radius: 14px;
+    }
+
+
+    .website-info {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        margin-top: 18px;
+
+        max-width: 100%;
+    }
+
+
+    .website-name {
+
+        font-size: 22px;
+
+        line-height: 1.25;
+    }
+
+
+    .description {
+
+        font-size: 14px;
+
+        line-height: 1.45;
+    }
+
+
+    .website-link {
+
+        font-size: 13px;
+
+        line-height: 1.4;
+
+        word-break: break-word;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   400px AND BELOW
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .header {
+
+        height: 68px;
+
+        padding-left: 4%;
+    }
+
+
+    .logo {
+
+        transform: scale(0.82);
+    }
+
+
+    .logo-text {
+
+        font-size: 21px;
+    }
+
+
+    .content {
+
+        padding-top: 28px;
+
+        padding-bottom: 50px;
+    }
+
+
+    .content h1 {
+
+        margin-left: 6%;
+
+        margin-right: 6%;
+
+        font-size: 17px;
+
+        line-height: 1.4;
+    }
+
+
+    .website-card {
+
+        width: 90%;
+
+        margin-left: 5%;
+
+        margin-top: 23px;
+
+        padding: 15px;
+
+        border-radius: 20px;
+    }
+
+
+    .website-card + .website-card {
+
+        margin-top: 25px;
+    }
+
+
+    .website-card.slide-left {
+
+        transform: translateX(-70px);
+    }
+
+
+    .website-card.slide-right {
+
+        transform: translateX(70px);
+    }
+
+
+    .website-card.show {
+
+        transform: translateX(0);
+    }
+
+
+    .image-box {
+
+        width: 125px;
+
+        height: 115px;
+
+        border-radius: 13px;
+    }
+
+
+    .website-info {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        margin-top: 16px;
+    }
+
+
+    .website-name {
+
+        font-size: 20px;
+
+        line-height: 1.25;
+    }
+
+
+    .description {
+
+        font-size: 13px;
+
+        line-height: 1.45;
+    }
+
+
+    .website-link {
+
+        font-size: 12px;
+
+        line-height: 1.4;
+
+        word-break: break-word;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCE MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .website-card,
+    .website-card.slide-left,
+    .website-card.slide-right,
+    .website-card.show {
+
+        opacity: 1;
+
+        transform: none !important;
+
+        transition: none !important;
+    }
+
+
+    .website-card:hover .image-box img {
+
+        transform: none;
+    }
+
+}
