@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Relief Information</title>
+    <!-- Importing Google Fonts for the handwritten look -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Flood.css">
+</head>
+<body>
+
+    <!-- Full-Width Navbar Section -->
+    <header class="navbar">
+        <div class="logo-area">
+            <svg class="cloud-icon" viewBox="0 0 24 24" width="45" height="45">
+                <path d="M19.36 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.64-4.96z"/>
+            </svg>
+            <span class="logo-text">Towards Light</span>
+        </div>
+    </header>
+
+    <!-- Sub-header Quote Section -->
+    <div class="header-quote-container">
+        <p class="header-quote">We only suggest trusted, official and verified websites</p>
+    </div>
+
+    <div class="wrapper">
+        <!-- Section 1 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Flood_2.jpg" alt="GlobalGiving Image">
+            </div>
+            <div class="content">
+                <h2>1.Direct Relief (Emergency Flood & Tsunami Fund)</h2>
+                <p>This international humanitarian organization actively accepts public donations to deliver emergency medical assistance, clean-up supplies, and survival kits specifically during devastating floods and coastal tsunamis worldwide.</p>
+                <a href="https://directrelief.org" target="_blank">directrelief.org</a>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Flood_4.JPG" alt="Direct Relief Image">
+            </div>
+            <div class="content">
+                <h2>2. Hemkunt Foundation</h2>
+                <p>An India-based non-profit organization that has played a frontline role during severe regional crises, particularly massive seasonal floods across states like Assam, Punjab, and Delhi.</p>
+                <a href="https://hemkuntfoundation.com" target="_blank">hemkuntfoundation.com</a>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Flood_3.jpg" alt="PMNRF Image">
+            </div>
+            <div class="content">
+                <h2>3.Mukul Madhav Foundation (MMF)</h2>
+                <p>This Indian trust actively steps in during heavy monsoon disasters, urban floods, and river overflows (such as recurring floods in Assam, Punjab, and Maharashtra).</p>
+                <a href="https://mmpc.in" target="_blank">mmpc.in</a>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Flood_6.jpg" alt="Japanese Red Cross Image">
+            </div>
+            <div class="content">
+                <h2>4.Aktion Deutschland Hilft (Germany)</h2>
+                <p>This is Germany's primary national relief coalition that pools emergency funds specifically for catastrophic floods, heavy storms, and tsunamis. They accept public donations across Germany</p>
+                <a href="https://www.aktion-deutschland-hilft.de" target="_blank">aktion-deutschland-hilft.de</a>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Flood_1.avif" alt="Nepal Red Cross Image">
+            </div>
+            <div class="content">
+                <h2>5.ShelterBox</h2>
+                <p>This international disaster relief charity specializes entirely in emergency shelter and tools for families left homeless by natural disasters, particularly severe monsoons, river floods, and tsunamis.</p>
+                <a href="https://www.shelterbox.org" target="_blank">shelterbox.org</a>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Flood_5.avif" alt="GiveIndia Image">
+            </div>
+            <div class="content">
+                <h2>6. Global Empowerment Mission (GEM)</h2>
+                <p>GEM is a well-known international disaster relief organization that focuses heavily on sudden-onset calamities like major floods and hurricanes.</p>
+                <a href="https://globalempowermentmission.org" target="_blank">globalempowermentmission.org</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Trigger Script with Repeat on Scroll Up/Down -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.card').forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>

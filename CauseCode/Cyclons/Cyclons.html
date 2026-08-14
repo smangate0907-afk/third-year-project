@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclone Relief Information</title>
+    <!-- Importing Google Fonts for the handwritten look -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Cyclons.css">
+</head>
+<body>
+
+    <!-- Full-Width Navbar Section -->
+    <header class="navbar">
+        <div class="logo-area">
+            <svg class="cloud-icon" viewBox="0 0 24 24" width="45" height="45">
+                <path d="M19.36 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.64-4.96z"/>
+            </svg>
+            <span class="logo-text">Towards Light</span>
+        </div>
+    </header>
+
+    <!-- Sub-header Quote Section -->
+    <div class="header-quote-container">
+        <p class="header-quote">We only suggest trusted, official and verified websites</p>
+    </div>
+
+    <div class="wrapper">
+        <!-- Section 1 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Cyc_1.jpg" alt="American Red Cross Image">
+            </div>
+            <div class="content">
+                <h2>1. American Red Cross (Hurricane & Cyclone Disaster Relief)</h2>
+                <p>This major organization runs massive emergency operations during catastrophic hurricanes and coastal cyclones. They accept public donations to operate emergency shelters, distribute food supplies.</p>
+                <a href="https://www.redcross.org" target="_blank">redcross.org</a>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Cyc_5.webp" alt="ActionAid Association Image">
+            </div>
+            <div class="content">
+                <h2>2. ActionAid Association (India - Cyclone & Storm Relief)</h2>
+                <p>ActionAid India plays a critical frontline role during major coastal cyclones in states like Odisha, West Bengal, and Andhra Pradesh (such as past cyclones Amphan and Fani).</p>
+                <a href="https://www.actionaidindia.org" target="_blank">actionaidindia.org</a>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Cyc_3.jpeg" alt="PMNRF Image">
+            </div>
+            <div class="content">
+                <h2>3. Prime Minister's National Relief Fund - PMNRF (India)</h2>
+                <p>India's primary official national fund which allocates heavy financial assistance, medical compensation, and reconstruction aid for citizens affected by severe natural disasters, particularly devastating coastal cyclones.</p>
+                <a href="https://pmnrf.gov.in" target="_blank">pmnrf.gov.in</a>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Cyc_4.jpeg" alt="Goonj Image">
+            </div>
+            <div class="content">
+                <h2>4. Goonj (India - Disaster Relief & Cyclone Support)</h2>
+                <p>Goonj is a well-known Indian non-profit organization that handles large-scale material and financial relief during major natural calamities, including severe cyclones hitting eastern and southern coastal belts.</p>
+                <a href="https://www.goonj.org" target="_blank">goonj.org</a>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Cyc_2.webp" alt="Americares Image">
+            </div>
+            <div class="content">
+                <h2>5. Americares (Emergency Cyclone & Storm Response)</h2>
+                <p>Immediately steps in when major cyclones and typhoons strike vulnerable coastal areas. They accept public funding to deliver emergency medicines, medical supplies, and mental health support to survivors trapped or injured in storm-ravaged regions.</p>
+                <a href="https://www.americares.org" target="_blank">americares.org</a>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Cyc_6.avif" alt="GEM Image">
+            </div>
+            <div class="content">
+                <h2>6. Global Empowerment Mission (GEM)</h2>
+                <p>GEM is an international disaster relief organization that actively deploys to regions struck by severe tropical storms, hurricanes, and coastal cyclones.</p>
+                <a href="https://globalempowermentmission.org" target="_blank">globalempowermentmission.org</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Trigger Script with Repeat on Scroll Up/Down -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.card').forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>
