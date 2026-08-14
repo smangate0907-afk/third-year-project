@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildfire Relief Information</title>
+    <!-- Importing Google Fonts for the handwritten look -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="WF.css">
+</head>
+<body>
+
+    <!-- Full-Width Navbar Section -->
+    <header class="navbar">
+        <div class="logo-area">
+            <svg class="cloud-icon" viewBox="0 0 24 24" width="45" height="45">
+                <path d="M19.36 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.64-4.96z"/>
+            </svg>
+            <span class="logo-text">Towards Light</span>
+        </div>
+    </header>
+
+    <!-- Sub-header Quote Section -->
+    <div class="header-quote-container">
+        <p class="header-quote">We only suggest trusted, official and verified websites</p>
+    </div>
+
+    <div class="wrapper">
+        <!-- Section 1 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WF_5.jpeg" alt="Prime Minister's National Relief Fund Natural Hazard Financial Allocations Image">
+            </div>
+            <div class="content">
+                <h2>1. Prime Minister's National Relief Fund - PMNRF (India)</h2>
+                <p>India's premier national official fund which handles massive emergency financial allocations, medical aid, and relief packages for citizens affected by severe natural hazards.</p>
+                <a href="https://pmnrf.gov.in" target="_blank">pmnrf.gov.in</a>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WF_4.webp" alt="Wildlife SOS Animal Wildfire and Forest Rescue Image">
+            </div>
+            <div class="content">
+                <h2>2. Wildlife SOS (India - Animal Wildfire & Forest Rescue)</h2>
+                <p>While wildfires severely destroy human settlements, they trap countless wild animals and forest ecosystems. Wildlife SOS is a prominent Indian organization that accepts public donations to rescue, treat, and rehabilitate animals injured.</p>
+                <a href="https://wildlifesos.org" target="_blank">wildlifesos.org</a>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WF_6.jpeg" alt="Aaranyak Ecological Disaster and Habitat Restoration Image">
+            </div>
+            <div class="content">
+                <h2>3. Aaranyak (Guwahati, Assam)</h2>
+                <p>Based in Guwahati, Assam, Aaranyak is a premier scientific and environmental research organization that handles ecological disasters, habitat restoration, and climate-induced emergencies like forest degradation and regional fires in Northeast India.</p>
+                <a href="https://aaranyak.org" target="_blank">aaranyak.org</a>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WF_2.webp" alt="Australian Red Cross Bushfire and Wildfire Recovery Image">
+            </div>
+            <div class="content">
+                <h2>4. Australian Red Cross (Bushfire & Wildfire Recovery)</h2>
+                <p>The Australian Red Cross runs dedicated emergency disaster appeals, accepting global public donations to distribute financial grants, personal support.</p>
+                <a href="https://www.redcross.org.au" target="_blank">www.redcross.org.au</a>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WF_1.webp" alt="CA Fire Foundation Wildfire Relief and Family Support Image">
+            </div>
+            <div class="content">
+                <h2>5. cafirefoundation.org</h2>
+                <p>This major foundation operates dedicated wildfire relief programs (such as the SAVE program) to provide immediate financial assistance, emergency cash cards, and recovery support to families and communities devastated by severe wildfires.</p>
+                <a href="https://cafirefoundation.org" target="_blank">cafirefoundation.org</a>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WF_3.jpg" alt="GlobalGiving International Wildfire Response Funds Image">
+            </div>
+            <div class="content">
+                <h2>6. NATURALLY WILD / Global Wildfire Response Funds (International)</h2>
+                <p>GlobalGiving hosts specialized international "Wildfire Relief Funds" whenever massive forest fires break out globally (such as in Canada, Europe, or South America).</p>
+                <a href="https://www.globalgiving.org" target="_blank">globalgiving.org</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Trigger Script with Repeat on Scroll Up/Down -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.card').forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #bce6f2;
+    color: #0b3c4c;
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    padding: 25px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #bce6f2;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Reenie Beanie', cursive !important;
+    font-size: 42px;
+    font-weight: 700;
+    color: #d9534f;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-container {
+    position: relative;
+    width: 380px;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 14px 24px;
+    padding-right: 50px;
+    border-radius: 35px;
+    border: none;
+    background-color: #ffe6a7;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    color: #7c4700;
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.search-bar::placeholder {
+    color: #b38947;
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    stroke: #d97706;
+    stroke-width: 2.5;
+    fill: none;
+}
+
+.cause-section {
+    position: relative;
+    padding: 40px 10%;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+/* 1. Earthquakes Section with Moutains.jpg */
+.bg-earthquake {
+    background-color: #8ADCEF;
+    background-image: linear-gradient(to bottom, rgba(138, 220, 239, 0.7), rgba(138, 220, 239, 0.85)), url('Moutains.jpeg');
+}
+
+/* 2. Tsunami & Flood Group (#8ADCEF with rounded top and bubble scallop bottom) */
+.blue-card-group-1 {
+    background-color: #8ADCEF;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.scallop-bottom {
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-image: radial-gradient(circle, #8ADCEF 16px, transparent 17px);
+    background-size: 36px 36px;
+    background-repeat: repeat-x;
+    z-index: 2;
+}
+
+/* 3. Landslides Section (#95E8FA with clearance space for bubbles) */
+.bg-landslides {
+    background-color: #95E8FA;
+    padding-top: 55px;
+}
+
+/* 4. Second Image Group (Cyclones down to Immigrants with Section2.jpg) */
+.image-card-group-2 {
+    background-color: #95E8FA;
+    background-image: linear-gradient(to bottom, rgba(149, 232, 250, 0.7), rgba(149, 232, 250, 0.85)), url('Section2.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    overflow: hidden;
+}
+
+/* 5. Internal Civil Conflicts Section (#95E8FA) */
+.bg-final-blue {
+    background-color: #95E8FA;
+}
+
+/* 6. Bottom Sand Footer */
+.bg-solid-sand {
+    background-color: #fde6b6;
+    height: 140px;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+}
+
+h2 {
+    font-family: 'Reenie Beanie', cursive !important;
+    font-size: 58px;
+    color: #8b0000;
+    margin-bottom: 8px;
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    font-weight: normal;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+    height: 2px;
+    background-color: #8b0000;
+}
+
+p.description {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 780px;
+    margin-bottom: 20px;
+    color: #0b3c4c;
+    font-weight: 400;
+}
+
+.btn-help {
+    display: inline-block;
+    width: 155px;
+    padding: 11px 20px;
+    background-color: #2a7585;
+    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-help:hover {
+    transform: translateY(-3px);
+    background-color: #1f5a66;
+}
+
+/* --- Slide-Up Animation Styles (Slower Speed) --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    will-change: opacity, transform;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

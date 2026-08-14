@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake Information</title>
+    <!-- Importing Google Fonts for the handwritten look -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="TA.css">
+</head>
+<body>
+
+    <!-- Full-Width Navbar Section -->
+    <header class="navbar">
+        <div class="logo-area">
+            <svg class="cloud-icon" viewBox="0 0 24 24" width="42" height="42">
+                <path d="M19.36 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.64-4.96z"/>
+            </svg>
+            <span class="logo-text">Towards Light</span>
+        </div>
+    </header>
+
+    <!-- Sub-header Quote Section -->
+    <div class="header-quote-container">
+        <p class="header-quote">We only suggest trusted, official and verified websites</p>
+    </div>
+
+    <div class="wrapper">
+        <!-- Section 1 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="TA_2.webp" alt="GlobalGiving Image">
+            </div>
+            <div class="content">
+                <h2>1.. Palestine Red Crescent Society (PRCS) </h2>
+                <p>Operating as an official independent humanitarian society within the International Red Cross and Red Crescent Movement, PRCS manages emergency medical services, ambulance corps, and hospitals in Palestine (Gaza and West Bank). </p>
+                <a href="www.palestinercs.org " target="_blank">https://www.globalgiving.org</a>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="TA_4.jpg" alt="Direct Relief Image">
+            </div>
+            <div class="content">
+                <h2>2.. UNRWA (United Nations Relief and Works Agency for Palestine Refugees) </h2>
+                <p>UNRWA is the primary UN agency providing vital healthcare, emergency food distribution, education, and crisis cash-assistance to millions of registered Palestine refugees caught in active conflict zones across Gaza, the West Bank, and surrounding regions. </p>
+                <a href="donate.unrwa.org" target="_blank">https://www.directrelief.org</a>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="TA_1.avif" alt="PMNRF Image">
+            </div>
+            <div class="content">
+                <h2>3.Prime Minister's National Relief Fund - PMNRF (India)</h2>
+                <pIndia's premier official national fund which routinely disburses immediate financial compensation, medical treatment aid, and ex-gratia relief to citizens and families affected by tragic terrorist attacks.></p>
+                <a href="pmnrf.gov.in " target="_blank">https://pmnrf.gov.in</a>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="TA_3.webp" alt="Japanese Red Cross Image">
+            </div>
+            <div class="content">
+                <h2>4.National Compassion Fund (USA - Terrorist Attack & Mass Violence Relief)</h2>
+                <p>: This U.S.-based foundation acts as a secure, centralized platform that collects public donations following mass casualty crimes and domestic terrorist attacks. </p>
+                <a href="nationalcompassionfund.org " target="_blank">https://www.jrc.or.jp</a>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="TA_6.avif" alt="Nepal Red Cross Image">
+            </div>
+            <div class="content">
+                <h2>5.ActionAid Association (India - Crisis & Conflict Emergency Relief)</h2>
+                <p>ActionAid India participates in international humanitarian relief appeals, extending support to vulnerable populations displaced by severe geopolitical conflicts and humanitarian emergencies.</p>
+                <a href="www.actionaidindia.org " target="_blank">https://www.nrcs.org</a>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="TA_5.jpg" alt="GiveIndia Image">
+            </div>
+            <div class="content">
+                <h2>6.Bharat Ke Veer (India - Paramilitary Terrorist Attack Support)</h2>
+                <p>This official platform enables citizens to directly contribute and donate money online to individual families or dependents of Central Armed Police Forces (CAPF).</p>
+                <a href="bharatkeveer.gov.in" target="_blank">https://www.giveindia.org</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Trigger Script with Repeat on Scroll Up/Down -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.card').forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>

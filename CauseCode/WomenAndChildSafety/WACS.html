@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women and Child Safety Information</title>
+    <!-- Importing Google Fonts for the handwritten look -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="WACS.css">
+</head>
+<body>
+
+    <!-- Full-Width Navbar Section -->
+    <header class="navbar">
+        <div class="logo-area">
+            <svg class="cloud-icon" viewBox="0 0 24 24" width="45" height="45">
+                <path d="M19.36 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.64-4.96z"/>
+            </svg>
+            <span class="logo-text">Towards Light</span>
+        </div>
+    </header>
+
+    <!-- Sub-header Quote Section -->
+    <div class="header-quote-container">
+        <p class="header-quote">We only suggest trusted, official and verified websites</p>
+    </div>
+
+    <div class="wrapper">
+        <!-- Section 1 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WACS_1.jpg" alt="UN Women Gender Equality and Empowerment Image">
+            </div>
+            <div class="content">
+                <h2>1. UN Women (United Nations Entity for Gender Equality and the Empowerment of Women)</h2>
+                <p>UN Women is the global champion for gender equality, working extensively to end violence against women and girls, protect their rights, and empower them worldwide.</p>
+                <a href="https://donate.unwomen.org" target="_blank">donate.unwomen.org</a>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WACS_2.jpg" alt="Save the Children Global Child Protection Image">
+            </div>
+            <div class="content">
+                <h2>2. Save the Children (Global Child Protection & Welfare)</h2>
+                <p>Operating globally across more-than 100 countries, Save the Children is a premier international organization focused entirely on defending children from abuse, exploitation, child labor, and dangerous conflicts.</p>
+                <a href="https://www.savethechildren.org" target="_blank">www.savethechildren.org</a>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WACS_3.jpg" alt="Polaris Project Human Trafficking Prevention Image">
+            </div>
+            <div class="content">
+                <h2>3. Polaris Project (USA - Human Trafficking & Child Exploitation Prevention)</h2>
+                <p>Polaris is a leading U.S.-based organization that fights against human trafficking and modern-day slavery, which disproportionately traps women and children.</p>
+                <a href="https://polarisproject.org" target="_blank">polarisproject.org</a>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WACS_5.jpg" alt="Child Rights and You CRY India Child Safety Image">
+            </div>
+            <div class="content">
+                <h2>4. Child Rights and You - CRY (India)</h2>
+                <p>CRY is India’s leading and most trusted non-profit organization dedicated to ensuring child rights, safety, education, and protection from child labor, child marriage, and trafficking.</p>
+                <a href="https://www.cry.org" target="_blank">www.cry.org</a>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WACS_4.jpg" alt="Kailash Satyarthi Childrens Foundation Education and Safety Image">
+            </div>
+            <div class="content">
+                <h2>5. Kailash Satyarthi Children’s Foundation - KSCF (India)</h2>
+                <p>Founded by Nobel Laureate Kailash Satyarthi, KSCF works internationally and nationally to end child labor, child trafficking, child sexual abuse, and to promote girl-child education and safety.</p>
+                <a href="https://satyarthi.org.in" target="_blank">satyarthi.org.in</a>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="WACS_6.jpg" alt="Breakthrough India Women and Girl Child Safety Image">
+            </div>
+            <div class="content">
+                <h2>6. Breakthrough India (Women & Girl Child Safety)</h2>
+                <p>Breakthrough is an India-based human rights organization working on the frontlines to end violence against women and girls, prevent early marriages, and challenge gender-based discrimination.</p>
+                <a href="https://in.breakthrough.tv" target="_blank">in.breakthrough.tv</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Trigger Script with Repeat on Scroll Up/Down -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.card').forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>

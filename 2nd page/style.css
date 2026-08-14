@@ -1,0 +1,212 @@
+/* Import handwritten font */
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+/* Global Reset */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* Root settings for desktop view */
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Reenie Beanie', cursive !important;
+}
+
+/* Enforce font family across all elements */
+body,
+.container,
+.child,
+.default-title,
+.content,
+.content h2,
+.content p {
+  font-family: 'Reenie Beanie', cursive !important;
+}
+
+/* Main wrapper layout */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #fff;
+  gap: 4px;
+  padding: 4px;
+}
+
+/* Individual flexible panel style */
+.child {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Background image styling */
+.child > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.27;
+}
+
+/* Floating heart action button */
+.floating-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #ff7f50;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: transform 0.2s ease-in-out;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Default centered text overlay */
+.default-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: 400;
+  white-space: nowrap;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+
+/* Hidden detailed text content */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.content h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.content p {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+/* Unique color themes for individual sections */
+#c1, #c1 .default-title, #c1 .content {
+  color: #0d6377;
+}
+
+#c2, #c2 .default-title, #c2 .content {
+  color: #D05D2D;
+}
+
+#c3, #c3 .default-title, #c3 .content {
+  color: #7B1112;
+}
+
+/* Desktop Hover Expansion Effects */
+.container:hover .child:hover {
+  flex: 1.6;
+}
+
+.container:hover .child:not(:hover) {
+  flex: 0.85;
+}
+
+.child:hover .default-title {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.child:hover .content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.child:hover img {
+  opacity: 0.27;
+}
+
+/* Mobile & Small Screen Responsive Overrides */
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    height: auto;
+    overflow: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .child {
+    width: 100%;
+    height: 350px;
+    flex: none;
+  }
+
+  .default-title {
+    opacity: 1;
+    visibility: visible;
+    font-size: 3.2rem;
+  }
+
+  .child:hover .default-title {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .content {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+  }
+
+  .child:hover .content {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .container:hover .child:hover {
+    flex: none;
+  }
+
+  .container:hover .child:not(:hover) {
+    flex: none;
+  }
+}

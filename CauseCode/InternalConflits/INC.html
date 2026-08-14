@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Civils Conflicts Information</title>
+    <!-- Importing Google Fonts for the handwritten look -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="INC.css">
+</head>
+<body>
+
+    <!-- Full-Width Navbar Section -->
+    <header class="navbar">
+        <div class="logo-area">
+            <svg class="cloud-icon" viewBox="0 0 24 24" width="45" height="45">
+                <path d="M19.36 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.64-4.96z"/>
+            </svg>
+            <span class="logo-text">Towards Light</span>
+        </div>
+    </header>
+
+    <!-- Sub-header Quote Section -->
+    <div class="header-quote-container">
+        <p class="header-quote">We only suggest trusted, official and verified websites</p>
+    </div>
+
+    <div class="wrapper">
+        <!-- Section 1 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="INC_1.jpeg" alt="ICRC Global Civil Conflict Relief Image">
+            </div>
+            <div class="content">
+                <h2>1. International Committee of the Red Cross - ICRC (Global Civil Conflict Relief)</h2>
+                <p>The ICRC operates globally to protect and assist victims of internal armed conflicts, civil wars, and domestic violence. They accept international public donations to deliver emergency medical care, surgical treatment</p>
+                <a href="https://www.icrc.org" target="_blank">www.icrc.org</a>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="INC_3.jpeg" alt="Doctors Without Borders Civil Unrest Medical Relief Image">
+            </div>
+            <div class="content">
+                <h2>2. Médecins Sans Frontières / Doctors Without Borders (MSF)</h2>
+                <p>MSF delivers emergency medical humanitarian assistance to people affected by internal conflicts, civil unrest, and violence where healthcare infrastructure has collapsed.</p>
+                <a href="https://www.msf.org" target="_blank">www.msf.org</a>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="INC_5.jpeg" alt="National Defence Fund Security Personnel Welfare Image">
+            </div>
+            <div class="content">
+                <h2>3. National Defence Fund - NDF (India)</h2>
+                <p>Established to accept voluntary public contributions, the NDF heavily finances the welfare, medical rehabilitation, and educational needs of dependents of security personnel who face hostile engagements etc.</p>
+                <a href="https://ndf.gov.in" target="_blank">ndf.gov.in</a>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="INC_2.jpeg" alt="International Rescue Committee Internal Displacement Support Image">
+            </div>
+            <div class="content">
+                <h2>4. International Rescue Committee (IRC - Internal Displacement Support)</h2>
+                <p>The IRC responds globally to humanitarian crises caused by violent civil conflicts and political upheavals. They accept public donations to help people whose lives have been shattered by internal warfare to survive.</p>
+                <a href="https://www.rescue.org" target="_blank">www.rescue.org</a>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="INC_4.jpeg" alt="Prime Minister's National Relief Fund Riot and Conflict Relief Image">
+            </div>
+            <div class="content">
+                <h2>5. Prime Minister's National Relief Fund - PMNRF (India)</h2>
+                <p>India's premier official national fund which routinely allocates immediate financial assistance, medical treatment compensation, and ex-gratia relief to victims and families affected by domestic communal riots, internal civil disturbances, and violent clashes.</p>
+                <a href="https://pmnrf.gov.in" target="_blank">pmnrf.gov.in</a>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="INC_6.jpeg" alt="Khalsa Aid Conflict and Riot Relief Image">
+            </div>
+            <div class="content">
+                <h2>6. Khalsa Aid (Internal Conflict & Riot Relief - India & Global)</h2>
+                <p>Khalsa Aid is an international humanitarian NGO that actively steps into domestic civil conflict zones and riot-hit regions to provide emergency humanitarian aid.</p>
+                <a href="https://www.khalsaaid.org" target="_blank">khalsaaid.org</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Trigger Script with Repeat on Scroll Up/Down -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.card').forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>

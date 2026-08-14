@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsunami Relief Information</title>
+    <!-- Importing Google Fonts for the handwritten look -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Tsunami.css">
+</head>
+<body>
+
+    <!-- Full-Width Navbar Section -->
+    <header class="navbar">
+        <div class="logo-area">
+            <svg class="cloud-icon" viewBox="0 0 24 24" width="45" height="45">
+                <path d="M19.36 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.64-4.96z"/>
+            </svg>
+            <span class="logo-text">Towards Light</span>
+        </div>
+    </header>
+
+    <!-- Sub-header Quote Section -->
+    <div class="header-quote-container">
+        <p class="header-quote">We only suggest trusted, official and verified websites</p>
+    </div>
+
+    <div class="wrapper">
+        <!-- Section 1 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Tsunami_1.webp" alt="The Nippon Foundation Japan Tsunami and Disaster Relief Image">
+            </div>
+            <div class="content">
+                <h2>1. The Nippon Foundation (Japan Tsunami & Disaster Relief Fund)</h2>
+                <p>This is one of Japan's largest philanthropic foundations, which actively coordinates and accepts global public donations for major coastal catastrophes, including the historic Great East Japan Earthquake and Tsunami.</p>
+                <a href="https://www.nippon-foundation.or.jp" target="_blank">nippon-foundation.or.jp</a>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Tsunami_2.jpg" alt="International Tsunami Information Center Advisory Body Image">
+            </div>
+            <div class="content">
+                <h2>2. International Tsunami Information Center (ITIC)</h2>
+                <p>While functioning primarily as an official international advisory body for tsunami warnings, they collaborate with global relief networks and accept grants or public contributions to assist vulnerable coastal countries in setting up emergency response frameworks and community-level tsunami recovery programs.</p>
+                <a href="https://itic.ioc-unesco.org" target="_blank">itic.ioc-unesco.org</a>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Tsunami_3.avif" alt="Action Against Hunger Tsunami and Coastal Emergency Response Image">
+            </div>
+            <div class="content">
+                <h2>3. Action Against Hunger (Tsunami & Coastal Emergency Response)</h2>
+                <p>This international organization runs specialized emergency interventions in coastal regions struck by tsunamis and severe sea floods. They accept public funding to restore ruined water sanitation infrastructure, prevent waterborne disease outbreaks, and distribute emergency nutritional supplies to displaced coastal families.</p>
+                <a href="https://www.actionagainsthunger.org" target="_blank">actionagainsthunger.org</a>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Tsunami_5.jpg" alt="Hope Worldwide Coastal Disaster and Tsunami Relief Image">
+            </div>
+            <div class="content">
+                <h2>4. Hope Worldwide (Coastal Disaster & Tsunami Relief)</h2>
+                <p>This global charity frequently activates targeted emergency campaigns for coastal communities impacted by tsunamis and severe tropical storms. They accept public donations to deploy ground volunteers, rebuild damaged homes along marine borders.</p>
+                <a href="https://www.hopeww.org" target="_blank">hopeww.org</a>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Tsunami_4.jpg" alt="Indonesian Red Cross Rapid Coastal Evacuation Image">
+            </div>
+            <div class="content">
+                <h2>5. Palang Merah Indonesia - Indonesian Red Cross (PMI)</h2>
+                <p>Indonesia is one of the most tsunami-prone nations in the world (having faced devastating events like the 2004 Indian Ocean tsunami). The Indonesian Red Cross accepts public donations specifically to manage rapid coastal evacuations, deploy emergency medical teams.</p>
+                <a href="https://www.pmi.or.id" target="_blank">pmi.or.id</a>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Tsunami_6.webp" alt="Pacific Tsunami Museum Wave Safety Education Image">
+            </div>
+            <div class="content">
+                <h2>6. Pacific Tsunami Museum</h2>
+                <p>Based in a heavily tsunami-vulnerable region, this organization works specifically to educate the public on ocean-wave safety, preserve historical disaster data, and support coastal communities recovering from devastating tsunamis.</p>
+                <a href="https://tsunami.org" target="_blank">tsunami.org</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Trigger Script with Repeat on Scroll Up/Down -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.card').forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>

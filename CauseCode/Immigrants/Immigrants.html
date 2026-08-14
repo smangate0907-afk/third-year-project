@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immigrants Information</title>
+    <!-- Importing Google Fonts for the handwritten look -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Immigrants.css">
+</head>
+<body>
+
+    <!-- Full-Width Navbar Section -->
+    <header class="navbar">
+        <div class="logo-area">
+            <svg class="cloud-icon" viewBox="0 0 24 24" width="42" height="42">
+                <path d="M19.36 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.64-4.96z"/>
+            </svg>
+            <span class="logo-text">Towards Light</span>
+        </div>
+    </header>
+
+    <!-- Sub-header Quote Section -->
+    <div class="header-quote-container">
+        <p class="header-quote">We only suggest trusted, official and verified websites</p>
+    </div>
+
+    <div class="wrapper">
+        <!-- Section 1 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Immigrants_6.jpg" alt="GlobalGiving Image">
+            </div>
+            <div class="content">
+                <h2>1. ActionAid Association (India - Migrant Worker & Displaced Rights)</h2>
+                <p>ActionAid India works extensively on the ground to support distressed internal migrants, displaced laborers, and vulnerable uprooted communities during sudden economic or social crises. </p>
+                <a href="www.actionaidindia.org " target="_blank">https://www.globalgiving.org</a>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Immigrants_5.jpg" alt="Direct Relief Image">
+            </div>
+            <div class="content">
+                <h2>2. Bal Raksha Bharat (Save the Children India - Migrant & Refugee Support)</h2>
+                <p>This organization actively intervenes to protect vulnerable children and families belonging to marginalized migrant worker communities and displaced groups across India.</p>
+                <a href="balrakshabharat.org " target="_blank">https://www.directrelief.org</a>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Immigrants_4.jpg" alt="PMNRF Image">
+            </div>
+            <div class="content">
+                <h2>3.International Rescue Committee (IRC)</h2>
+                <p>The IRC responds to the world's worst humanitarian crises, helping people whose lives have been shattered by conflict and persecution to survive, recover, and rebuild. </p>
+                <a href="www.rescue.org" target="_blank">https://pmnrf.gov.in</a>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Immigrants_3.jpg" alt="Japanese Red Cross Image">
+            </div>
+            <div class="content">
+                <h2>4. IOM (International Organization for Migration / UN Migration Agency) </h2>
+                <p>IOM is a premier intergovernmental agency that provides essential humanitarian assistance to vulnerable migrants, internally displaced persons, and stranded travelers globally. </p>
+                <a href="donate.iom.int " target="_blank">https://www.jrc.or.jp</a>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Immigrants_2.jpg" alt="Nepal Red Cross Image">
+            </div>
+            <div class="content">
+                <h2>5.Auroveda Foundation (Refugee & Migrant Support India)</h2>
+                <p>: Operating in India, this foundation runs dedicated refugee and migrant fundraising campaigns to support displaced populations who have relocated to India due to regional persecution. </p>
+                <a href="auroveda.org " target="_blank">https://www.nrcs.org</a>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="Immigrants_1.jpg" alt="GiveIndia Image">
+            </div>
+            <div class="content">
+                <h2>6. UNHCR (The UN Refugee Agency) </h2>
+                <p>: UNHCR is the world's leading global organization dedicated to saving lives, protecting rights, and building better futures for refugees, forcibly displaced communities, and stateless people. </p>
+                <a href="donate.unhcr.org " target="_blank">https://www.giveindia.org</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Trigger Script with Repeat on Scroll Up/Down -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.card').forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>

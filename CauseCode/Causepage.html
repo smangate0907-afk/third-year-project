@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Towards Light - Causes to Help</title>
+    <link rel="stylesheet" href="Cstyle.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            ☁ Towards Light
+        </div>
+        <div class="search-container">
+            <input type="text" id="causeSearch" class="search-bar" placeholder="Find Causes to help">
+            <svg class="search-icon" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </div>
+    </header>
+
+    <!-- 1. Earthquakes Section -->
+    <section class="cause-section bg-earthquake animate-on-scroll">
+        <h2>Earthquakes</h2>
+        <p class="description">Every year hundreds of people suffer from damage caused by Earthquakes, the tiniest gesture from your side can result in saving someone’s life.</p>
+        <a href="EarthQuake/Earthquack.html" class="btn-help">Start Helping</a>
+    </section>
+
+    <!-- 2. Tsunami & Flood Group (Solid Color #8ADCEF with Rounded Top & Scalloped Bottom) -->
+    <div class="blue-card-group-1 animate-on-scroll">
+        <section class="cause-section">
+            <h2>Tsunami</h2>
+            <p class="description">Between 1998-2017, tsunamis caused more than 250 000 deaths globally, including more than 227 000 deaths due to the Indian Ocean tsunami in 2004.<br>Resilient infrastructure, early warning systems, and education is critical to saving people and protecting their assets against tsunami risk in the future.</p>
+            <a href="Tsunami/Tsunami.html" class="btn-help">Start Helping</a>
+        </section>
+
+        <section class="cause-section">
+            <h2>Flood</h2>
+            <p class="description">Every year hundreds of people suffer from damage caused by Earthquakes, the tiniest gesture from your side can result in saving someone’s life.</p>
+            <a href="Flood/Flood.html" class="btn-help">Start Helping</a>
+        </section>
+
+        <div class="scallop-bottom"></div>
+    </div>
+
+    <!-- 3. Landslides Section (Solid Color #95E8FA) -->
+    <section class="cause-section bg-landslides animate-on-scroll">
+        <h2>Landslides</h2>
+        <p class="description">Global and national statistics show that landslides trigger thousands of deaths and affect millions of people worldwide each year, with Asia—particularly the Himalayan regions and Western Ghats—accounting for a major share of high-risk events.</p>
+        <a href="Landslide/LS.html" class="btn-help">Start Helping</a>
+    </section>
+
+    <!-- 4. Second Image Group (Cyclones, Terrorist Attacks, Women Safety, Immigrants) -->
+    <div class="image-card-group-2 animate-on-scroll">
+        <section class="cause-section">
+            <h2>Cyclones</h2>
+            <p class="description">Tropical cyclones affect over 20 million people and expose 6% to 12% of the global population each year, causing hundreds of thousands of deaths historically through high winds, severe flooding, and storm surge drowning.</p>
+            <a href="Cyclons/Cyclons.html" class="btn-help">Start Helping</a>
+        </section>
+
+        <section class="cause-section">
+            <h2>Terrorist - Attacks</h2>
+            <p class="description">Loss of primary earners, local business destruction, and reduced economic activity lead to chronic financial strain and unemployment.<br>While localized trauma can fracture community trust, it sometimes temporarily strengthens collective solidarity and group allegiance.</p>
+            <a href="TerroristAttack/TA.html" class="btn-help">Start Helping</a>
+        </section>
+
+        <section class="cause-section">
+            <h2>Women and children Safety</h2>
+            <p class="description">Globally, about 33% of women face physical or sexual violence, and nearly 1 in 5 girls experience child marriage. These safety statistics reflect a deep crisis that damages mental health, limits daily freedom, slows career growth, and traps families in cycles of fear and trauma.</p>
+            <a href="WomenAndChildSafety/WACS.html" class="btn-help">Start Helping</a>
+        </section>
+
+        <section class="cause-section">
+            <h2>Immigrants</h2>
+            <p class="description">Immigrant safety statistics show that foreign-born populations experience higher rates of occupational injuries and vulnerabilities, yet broad empirical research consistently indicates they are incarcerated or commit violent crimes at lower or comparable rates to native-born citizens.</p>
+            <a href="Immigrants/Immigrants.html" class="btn-help">Start Helping</a>
+        </section>
+    </div>
+
+    <!-- 5. Internal Civil Conflicts & Final Section -->
+    <section class="cause-section bg-final-blue animate-on-scroll">
+        <h2>Internal civil conflicts</h2>
+        <p class="description">Internal civil conflicts cause massive civilian harm, driving record displacement, surging casualties, and the collapse of basic health and economic systems.</p>
+        <a href="InternalConflits/INC.html" class="btn-help">Start Helping</a>
+    </section>
+
+    <!-- 6. Bottom Sand Section -->
+    <section class="bg-solid-sand animate-on-scroll"></section>
+
+    <!-- Scroll Observer & Search Navigation Script -->
+    <script>
+        // Slow Slide-Up Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                } else {
+                    entry.target.classList.remove('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Search and Enter Navigation Mapping
+        const searchInput = document.getElementById('causeSearch');
+
+        const causeLinks = {
+            "earthquake": "EarthQuake/Earthquack.html",
+            "earthquakes": "EarthQuake/Earthquack.html",
+            "tsunami": "Tsunami/Tsunami.html",
+            "flood": "Flood/Flood.html",
+            "landslide": "Landslide/LS.html",
+            "landslides": "Landslide/LS.html",
+            "cyclone": "Cyclons/Cyclons.html",
+            "cyclones": "Cyclons/Cyclons.html",
+            "terrorist": "TerroristAttack/TA.html",
+            "terrorist attacks": "TerroristAttack/TA.html",
+            "attack": "TerroristAttack/TA.html",
+            "women": "WomenAndChildSafety/WACS.html",
+            "children": "WomenAndChildSafety/WACS.html",
+            "safety": "WomenAndChildSafety/WACS.html",
+            "women and children safety": "WomenAndChildSafety/WACS.html",
+            "immigrant": "Immigrants/Immigrants.html",
+            "immigrants": "Immigrants/Immigrants.html",
+            "internal civil conflicts": "InternalConflits/INC.html",
+            "conflict": "InternalConflits/INC.html",
+            "conflicts": "InternalConflits/INC.html"
+        };
+
+        searchInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                const query = searchInput.value.toLowerCase().trim();
+                
+                // Match search query against keywords or partial matches
+                for (let key in causeLinks) {
+                    if (query.includes(key)) {
+                        window.location.href = causeLinks[key];
+                        return;
+                    }
+                }
+                
+                if (query !== "") {
+                    alert("Cause not found. Please try searching for a valid cause name (e.g., Tsunami, Earthquakes, Flood).");
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

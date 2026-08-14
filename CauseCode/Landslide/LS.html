@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landslide Relief Information</title>
+    <!-- Importing Google Fonts for the handwritten look -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="LS.css">
+</head>
+<body>
+
+    <!-- Full-Width Navbar Section -->
+    <header class="navbar">
+        <div class="logo-area">
+            <svg class="cloud-icon" viewBox="0 0 24 24" width="45" height="45">
+                <path d="M19.36 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.64-4.96z"/>
+            </svg>
+            <span class="logo-text">Towards Light</span>
+        </div>
+    </header>
+
+    <!-- Sub-header Quote Section -->
+    <div class="header-quote-container">
+        <p class="header-quote">We only suggest trusted, official and verified websites</p>
+    </div>
+
+    <div class="wrapper">
+        <!-- Section 1 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="LS_2.jpg" alt="Red Cross Society of China Landslide Relief Image">
+            </div>
+            <div class="content">
+                <h2>1. Red Cross Society of China (Landslide & Mountain Disaster Relief)</h2>
+                <p>This national body actively accepts public donations to deploy specialized rescue equipment, emergency medical teams, and financial compensation to families trapped or displaced by massive regional landslides.</p>
+                <a href="https://www.redcross.org.cn" target="_blank">redcross.org.cn</a>
+            </div>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="LS_4.jpg" alt="Mukul Madhav Foundation Hill-Region Landslide Relief Image">
+            </div>
+            <div class="content">
+                <h2>2. Mukul Madhav Foundation (India)</h2>
+                <p>This Indian foundation actively steps in during regional terrain disasters, hill-region cloudbursts, and major slope failures (such as the devastating Maharashtra village landslides).</p>
+                <a href="https://mmpc.in" target="_blank">mmpc.in</a>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="LS_6.webp" alt="PMNRF Landslide and Hilly Zone Disaster Relief Image">
+            </div>
+            <div class="content">
+                <h2>3. Prime Minister's National Relief Fund - PMNRF (India)</h2>
+                <p>India's primary official national fund which routinely allocates emergency financial relief, medical compensation, and reconstruction funds for victims affected by major landslides in vulnerable hilly zones like Himachal Pradesh, Uttarakhand, and Kerala.</p>
+                <a href="https://pmnrf.gov.in" target="_blank">pmnrf.gov.in</a>
+            </div>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="LS_3.webp" alt="Swiss Solidarity European Landslide and Rockfall Relief Image">
+            </div>
+            <div class="content">
+                <h2>4. Swiss Solidarity (Swiss-based International Disaster Relief)</h2>
+                <p>This foundation collects public donations across Europe to fund emergency stabilization projects, search operations, and long-term rebuilding for communities devastated by sudden rockfalls and major soil-liquefaction landslides</p>
+                <a href="https://www.swisssolidarity.ch" target="_blank">swisssolidarity.ch</a>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="LS_6.webp" alt="SEEDS India Mountain Environment and Landslide Resilience Image">
+            </div>
+            <div class="content">
+                <h2>5. SEEDS India (Sustainable Environment and Ecological Development Society)</h2>
+                <p>An established Indian non-profit organization that specializes in disaster response and community resilience, focusing extensively on fragile mountainous regions prone to heavy soil erosion and landslides.</p>
+                <a href="https://seedsindia.org" target="_blank">seedsindia.org</a>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="card">
+            <div class="image-container">
+                <img src="LS_1.jpg" alt="START Network Global Landslide and Rapid Crisis Fund Image">
+            </div>
+            <div class="content">
+                <h2>6. START Network (International Landslide & Crisis Fund)</h2>
+                <p>This global network pools and manages rapid-response crisis funds specifically for under-reported or sudden natural disasters like catastrophic mountain landslides and mudflows.</p>
+                <a href="https://startnetwork.org" target="_blank">startnetwork.org</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Trigger Script with Repeat on Scroll Up/Down -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.card').forEach((card) => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>
